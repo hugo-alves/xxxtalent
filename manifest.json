@@ -1,0 +1,30 @@
+{
+  "name": "Talent Protocol Score",
+  "version": "1.0.0",
+  "description": "Show Talent Protocol score on X profiles",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "*://*.twitter.com/*",
+    "*://*.x.com/*",
+    "*://*.talentprotocol.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.twitter.com/*",
+        "*://*.x.com/*"
+      ],
+      "js": ["content-script.js"],
+      "css": ["styles.css"]
+    }
+  ]
+} 

@@ -1,0 +1,68 @@
+.talent-protocol-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1da1f2;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999999;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.talent-protocol-badge:hover {
+  transform: scale(1.05);
+}
+
+.talent-protocol-detail-card {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  z-index: 999999;
+  display: none;
+  width: 220px;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.talent-protocol-detail-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.1em;
+}
+
+.talent-protocol-detail-card div {
+  margin: 4px 0;
+  font-size: 0.9em;
+}
+
+.talent-protocol-section {
+  transition: background-color 0.2s;
+}
+
+.talent-protocol-section:hover {
+  background-color: rgba(29, 161, 242, 0.15) !important;
+}
+
+.talent-protocol-expanded {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
