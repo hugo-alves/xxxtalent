@@ -59,7 +59,7 @@ console.log('Content script injected');
 
       const button = document.createElement('button');
       button.innerHTML = 'Get Builder Score';
-      button.style.background = '#1da1f2';
+      button.style.background = '#7857ED';
       button.style.color = 'white';
       button.style.border = 'none';
       button.style.padding = '8px 16px';
@@ -69,6 +69,15 @@ console.log('Content script injected');
       button.style.fontSize = '14px';
       button.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
       button.style.width = '100%';
+      button.style.transition = 'background 0.2s';
+      
+      // Add hover effect
+      button.addEventListener('mouseover', () => {
+        button.style.background = '#6445d6';
+      });
+      button.addEventListener('mouseout', () => {
+        button.style.background = '#7857ED';
+      });
 
       section.appendChild(button);
 
@@ -96,9 +105,29 @@ console.log('Content script injected');
           // Replace button with score display
           section.innerHTML = `
             <div class="talent-protocol-collapsed">
-              <div style="display: flex; align-items: center; gap: 8px; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-                <span style="font-weight: 700;">Talent Protocol Score:</span>
-                <span style="color: #1da1f2; font-weight: 700;">${passport.score}</span>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-weight: 700;">Talent Protocol Score:</span>
+                  <span style="color: #1da1f2; font-weight: 700;">${passport.score}</span>
+                </div>
+                <a 
+                  href="https://app.talentprotocol.com/profile/${passport.passport_id}" 
+                  target="_blank"
+                  style="
+                    background: #7857ED;
+                    color: white;
+                    text-decoration: none;
+                    padding: 4px 12px;
+                    border-radius: 16px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    transition: background 0.2s;
+                  "
+                  onmouseover="this.style.background='#6445d6'"
+                  onmouseout="this.style.background='#7857ED'"
+                >
+                  Open Passport
+                </a>
               </div>
             </div>
             <div class="talent-protocol-expanded" style="display: none; margin-top: 8px;">
