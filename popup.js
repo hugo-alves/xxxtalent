@@ -1,14 +1,14 @@
 const chromeStorage = {
   get: (key) => {
     return new Promise((resolve) => {
-      chrome.storage.sync.get(key, (result) => {
+      chrome.storage.local.get(key, (result) => {
         resolve(result[key]);
       });
     });
   },
   set: (key, value) => {
     return new Promise((resolve) => {
-      chrome.storage.sync.set({ [key]: value }, resolve);
+      chrome.storage.local.set({ [key]: value }, resolve);
     });
   }
 };
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Load saved API key
   try {
-    const savedApiKey = await chromeStorage.get('apiKey');
+    const savedApiKey = await chromeStorage.get('talentProtocolApiKey');
     if (savedApiKey) {
       apiKeyInput.value = savedApiKey;
     }
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Save API key when button is clicked
   saveButton.addEventListener('click', async () => {
     try {
-      await chromeStorage.set('apiKey', apiKeyInput.value);
+      await chromeStorage.set('talentProtocolApiKey', apiKeyInput.value);
       savedMessage.textContent = 'API key saved!';
       savedMessage.style.display = 'block';
       savedMessage.style.color = '#2ecc71';
