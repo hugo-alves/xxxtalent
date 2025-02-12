@@ -50,34 +50,11 @@ console.log('Content script injected');
 
       // Create initial button section
       const section = document.createElement('div');
-      section.className = 'talent-protocol-section';
-      section.style.marginTop = '12px';
-      section.style.padding = '12px 16px';
-      section.style.borderRadius = '16px';
-      section.style.backgroundColor = 'rgba(29, 161, 242, 0.1)';
-      section.style.cursor = 'pointer';
+      section.className = 'talent-protocol-section talent-protocol-button-section';
 
       const button = document.createElement('button');
       button.innerHTML = 'Get Builder Score';
-      button.style.background = '#7857ED';
-      button.style.color = 'white';
-      button.style.border = 'none';
-      button.style.padding = '8px 16px';
-      button.style.borderRadius = '20px';
-      button.style.cursor = 'pointer';
-      button.style.fontWeight = '600';
-      button.style.fontSize = '14px';
-      button.style.fontFamily = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
-      button.style.width = '100%';
-      button.style.transition = 'background 0.2s';
-      
-      // Add hover effect
-      button.addEventListener('mouseover', () => {
-        button.style.background = '#6445d6';
-      });
-      button.addEventListener('mouseout', () => {
-        button.style.background = '#7857ED';
-      });
+      button.className = 'talent-protocol-button';
 
       section.appendChild(button);
 

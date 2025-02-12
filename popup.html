@@ -1,63 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Talent Protocol Score</title>
+    <meta charset="UTF-8">
+    <title>Talent Protocol API Key</title>
     <style>
       body {
-        font-family: system-ui, -apple-system, sans-serif;
-        margin: 1em;
-        min-width: 300px;
+        width: 300px;
+        padding: 15px;
       }
-      h1 {
-        font-size: 1.2em;
-        margin-bottom: 1em;
+      .input-group {
+        margin-bottom: 15px;
       }
-      #save-api-key {
-        margin-top: 0.8em;
-        padding: 6px 12px;
-        background: #1da1f2;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+      input {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
       }
-      #save-api-key:hover {
-        background: #1a91da;
-      }
-      .saved-message {
-        color: #2ecc71;
-        margin-top: 0.5em;
+      #saved-message {
         display: none;
-        font-size: 0.9em;
-      }
-      #api-key {
-        padding: 6px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+        margin-top: 10px;
+        color: #2ecc71;
       }
     </style>
   </head>
   <body>
-    <h1>Talent Protocol</h1>
-    <label for="api-key">API Key:</label>
-    <br />
-    <input type="text" id="api-key" style="width: 100%;" />
-    <br />
-    <button id="save-api-key">Save</button>
-    <div class="saved-message" id="saved-message">API key saved!</div>
-
-    <!-- API Test section -->
-    <div style="margin-top: 20px;">
-      <input type="text" id="test-username" placeholder="Twitter username">
-      <button id="test-api">Test API</button>
+    <div class="input-group">
+      <label for="api-key">Talent Protocol API Key:</label>
+      <input 
+        type="password" 
+        id="api-key" 
+        placeholder="Enter your API key"
+        aria-label="Enter your Talent Protocol API key"
+      >
     </div>
-
-    <!-- Debug section -->
-    <div style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #ccc;">
-      <button id="view-storage">View Storage</button>
-      <button id="clear-storage">Clear Storage</button>
-    </div>
-
+    <button 
+      id="save-api-key"
+      aria-label="Save API key"
+    >Save</button>
+    <div 
+      id="saved-message" 
+      role="status" 
+      aria-live="polite"
+    >API key saved!</div>
     <script src="popup.js"></script>
   </body>
 </html> 
